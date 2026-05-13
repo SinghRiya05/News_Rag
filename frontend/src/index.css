@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+    /* ================= PRIMARY (TEAL) ================= */
+    --color-primary: #008080;
+    --color-on-primary: #ffffff;
+    --color-primary-hover: #006666;
+    --color-primary-container: #B2DFDB;
+
+    /* ================= SECONDARY ================= */
+    --color-secondary: #B2DFDB;
+    --color-on-secondary: #004d4d;
+    --color-secondary-container: #E0F2F1;
+    --color-on-secondary-container: #00695c;
+
+    /* ================= ACCENT (optional warm contrast) ================= */
+    --color-tertiary: #ff8a00;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary-container: #ffe0b2;
+    --color-on-tertiary-container: #7a3e00;
+
+    /* ================= BACKGROUND (LIGHT MODE) ================= */
+    --color-background: #f8fafc;
+    --color-on-background: #0f172a;
+
+    /* ================= SURFACE ================= */
+    --color-surface: #ffffff;
+    --color-on-surface: #0f172a;
+    --color-surface-variant: #e6f4f4;
+    --color-on-surface-variant: #475569;
+
+    /* ================= CONTAINERS ================= */
+    --color-surface-container-low: #f1fafa;
+    --color-surface-container: #e6f4f4;
+    --color-surface-container-high: #d0eeee;
+    --color-surface-container-highest: #b2dfdb;
+
+    /* ================= OUTLINE ================= */
+    --color-outline: #94a3b8;
+    --color-outline-variant: #cbd5e1;
+
+    /* ================= INVERSE ================= */
+    --color-inverse-surface: #0b1c30;
+    --color-inverse-on-surface: #f8fafc;
+
+    /* ================= LAYOUT ================= */
+    --spacing-sidebar: 280px;
+
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+}
+
+/* ================= DARK MODE ================= */
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark {
+    /* ================= BACKGROUND ================= */
+    --color-background: #0a0a0a;
+    --color-on-background: #f5f5f5;
+
+    /* ================= SURFACE ================= */
+    --color-surface: #111111;
+    --color-on-surface: #f5f5f5;
+
+    /* ================= SURFACE VARIANTS ================= */
+    --color-surface-variant: #1a1a1a;
+    --color-on-surface-variant: #cbd5e1;
+
+    /* ================= CONTAINERS ================= */
+    --color-surface-container-low: var(--color-background);
+    --color-surface-container: var(--color-background);
+    --color-surface-container-high: #242424;
+    --color-surface-container-highest: #2d2d2d;
+
+    /* ================= OUTLINE ================= */
+    --color-outline: #737373;
+    --color-outline-variant: #404040;
+}
+
+/* ================= BASE ================= */
+@layer base {
+    * {
+        @apply border-outline-variant;
+    }
+
+    body {
+        @apply font-sans bg-background text-on-background min-h-screen transition-colors duration-200;
+    }
+}
+
+/* ================= UTILITIES ================= */
+@layer utilities {
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        @apply align-middle;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-outline-variant rounded-full hover:bg-outline;
+    }
+
+    @keyframes slideInRight {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+    @keyframes slideOutRight {
+        from { transform: translateX(0); }
+        to { transform: translateX(100%); }
+    }
+
+    .animate-slide-in {
+        animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    .animate-slide-out {
+        animation: slideOutRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes shimmer {
+        0% { opacity: 0.5; transform: scale(0.95); }
+        50% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0.5; transform: scale(0.95); }
+    }
+
+    .animate-shimmer {
+        animation: shimmer 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-ring {
+        0% { transform: scale(0.33); opacity: 1; }
+        80%, 100% { transform: scale(1); opacity: 0; }
+    }
+
+    .animate-pulse-ring {
+        animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "Headline": "OpenAI launches new AI coding assistant for developers",
+        "category": "TECHNOLOGY",
+        "PublishedAt": "Monday, May 11, 2026 10:15:00",
+        "link": "https://www.example.com/openai-coding-assistant",
+        "source": "Global Tech",
+        "story": "<p>San Francisco, May 11 (PTI) OpenAI on Monday announced a new AI-powered coding assistant aimed at improving developer productivity.</p><p>The assistant can generate code snippets, explain errors, and optimize applications using natural language prompts.</p><p>The company stated that the feature will initially roll out to enterprise users before becoming publicly available later this year.</p>"
+    },
+    {
+        "Headline": "Tesla reports increase in quarterly electric vehicle deliveries",
+        "category": "BUSINESS",
+        "PublishedAt": "Monday, May 11, 2026 12:45:00",
+        "link": "https://www.example.com/tesla-quarterly-delivery",
+        "source": "Market Watch",
+        "story": "<p>New York, May 11 (PTI) Tesla on Monday reported a significant rise in quarterly electric vehicle deliveries despite global supply chain challenges.</p><p>The company said strong demand in Asian and European markets contributed to the increase in sales figures.</p><p>Analysts believe the company's expansion of battery manufacturing facilities has improved production efficiency.</p>"
+    },
+    {
+        "Headline": "Indian government announces new semiconductor manufacturing policy",
+        "category": "POLITICS",
+        "PublishedAt": "Monday, May 11, 2026 15:30:00",
+        "link": "https://www.example.com/india-semiconductor-policy",
+        "source": "India News",
+        "story": "<p>New Delhi, May 11 (PTI) The Indian government on Monday introduced a new semiconductor manufacturing policy aimed at boosting domestic chip production.</p><p>The policy includes tax incentives, infrastructure support, and funding assistance for companies setting up fabrication units in India.</p><p>Officials said the initiative is expected to strengthen the country's technology and electronics ecosystem over the next decade.</p>"
+    }
+]

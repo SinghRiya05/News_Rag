@@ -1,0 +1,41 @@
+import { COMMON_ERROR_MESSAGE, STATUS_CODES } from "../config/constant";
+import { ApiError } from "./ApiError";
+
+
+export class AppError extends ApiError {
+    constructor(message: string, statusCode: number) {
+        super(message, statusCode);
+    }
+}
+
+export class NotFoundError extends AppError {
+    constructor(message = COMMON_ERROR_MESSAGE.RESOURCE_NOT_FOUND) {
+        super(message, STATUS_CODES.NOT_FOUND);
+    }
+}
+
+export class ConflictError extends AppError {
+    constructor(message = COMMON_ERROR_MESSAGE.CONFLICTERROR) {
+        super(message, STATUS_CODES.CONFLICT);
+    }
+}
+
+export class BadRequestError extends AppError {
+    constructor(message = COMMON_ERROR_MESSAGE.BAD_REQUEST) {
+        super(message, STATUS_CODES.BAD_REQUEST);
+    }
+}
+
+
+
+export class ForbiddenError extends AppError {
+    constructor(message = COMMON_ERROR_MESSAGE.FORBIDDEN) {
+        super(message, STATUS_CODES.FORBIDDEN);
+    }
+}
+
+export class InternalServerError extends AppError {
+    constructor(message = COMMON_ERROR_MESSAGE.INTERNALSERVER) {
+        super(message, STATUS_CODES.INTERNAL_SERVER_ERROR);
+    }
+}
