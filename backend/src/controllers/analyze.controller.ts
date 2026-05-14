@@ -17,7 +17,7 @@ export const analyzeChatController = catchAsync(async (req: Request, res: Respon
     }
     const response = await analyzeService({
         originalResponse,
-        currentMessage: currentMessage || "Analyze this response in detail",
+        currentMessage: currentMessage,
         messages: messages || []
     });
     sendResponse(res, STATUS_CODES.SUCCESS, true, "Analysis complete", response);
