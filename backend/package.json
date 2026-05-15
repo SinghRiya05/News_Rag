@@ -5,7 +5,9 @@
   "type": "commonjs",
   "scripts": {
     "dev": "nodemon --exec ts-node src/server.ts",
-    "ingest": "ts-node src/scripts/ingest.ts"
+    "ingest": "ts-node src/scripts/ingest.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",

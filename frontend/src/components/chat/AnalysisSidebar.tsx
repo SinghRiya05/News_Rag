@@ -22,22 +22,19 @@ const AnalysisSidebar: React.FC<AnalysisSidebarProps> = ({ isOpen, onClose, orig
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (messageId) {
+    const initAnalysis = async () => {
+      if (!isOpen || !messageId) return;
+
       const saved = localStorage.getItem(`analysis_${messageId}`);
       if (saved) {
         setMessages(JSON.parse(saved));
-      } else {
-        setMessages([]);
-        if (isOpen) handleInitialAnalysis();
+      } else if (messages.length === 0 && !isLoading) {
+        await handleInitialAnalysis();
       }
-    }
-  }, [messageId]);
+    };
 
-  useEffect(() => {
-    if (isOpen && messages.length === 0 && !isLoading && messageId) {
-      handleInitialAnalysis();
-    }
-  }, [isOpen]);
+    initAnalysis();
+  }, [isOpen, messageId]);
 
   useEffect(() => {
     if (messageId && messages.length > 0) {

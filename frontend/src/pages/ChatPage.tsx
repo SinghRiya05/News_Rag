@@ -184,6 +184,7 @@ const ChatPage = () => {
       </main>
 
       <AnalysisSidebar 
+        key={analysisMessageId}
         isOpen={isAnalysisOpen} 
         onClose={() => setIsAnalysisOpen(false)}
         originalResponse={analysisContent}
