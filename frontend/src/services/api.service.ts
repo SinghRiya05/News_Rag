@@ -1,5 +1,5 @@
-const API_BASE_URL = import.meta.env.DEV 
-  ? 'http://localhost:8080/api' 
+const API_BASE_URL = import.meta.env.DEV
+  ? 'http://localhost:8080/api'
   : 'https://news-rag-backend-ug96.onrender.com/api';
 
 export const apiService = {
