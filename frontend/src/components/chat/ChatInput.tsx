@@ -61,11 +61,6 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
           )}
         </button>
       </form>
-      <div className="max-w-[1200px] mx-auto mt-2 flex justify-center">
-        <p className="text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-tighter">
-          AI-generated content can be inaccurate. Verify important information.
-        </p>
-      </div>
     </footer>
   );
 };
